@@ -22,7 +22,8 @@ import pickle
 from datetime import datetime
 
 dataset_dir = './Dataset/'
-images_dir = 'C:/VQGP'
+images_dir = dataset_dir + 'images/'
+
 model_name = 'ctcnet-' + str(datetime.now().date())
 if not os.path.exists('./'+model_name):
     os.mkdir(model_name)
@@ -157,18 +158,18 @@ out_seq_trans = feature_transformer(image_features_trans)
 
 
 def custom_loss(arg_list):
+
     seq_lens = np.ones((batch_size,1))*max_len
+    print (seq_lens, "THATS ALL FOLKS")
 
     y_true_val, label_logits, y_pred1, y_pred2 = arg_list
     y_pred_prob = K.softmax(y_pred1, axis=1)
 
     cat_cross_ent = objectives.categorical_crossentropy(y_true_val, y_pred_prob)
-    print (cat_cross_ent)
     
     y_pred_trans_prob = K.softmax(y_pred2, axis=1)
     
     cat_cross_ent_trans = objectives.categorical_crossentropy(y_true_val, y_pred_trans_prob)
-    print (cat_cross_ent_trans)
     
     # PROB PRESENT IN THE TWO VARIABLES PRESENT BELOW
 
@@ -177,11 +178,8 @@ def custom_loss(arg_list):
     
     ctc_trans = K.ctc_batch_cost(y_true=label_logits, y_pred=y_pred2, 
                                  input_length=seq_lens, label_length=seq_lens)
-   
-    return seq_lens
 
-    #return cat_cross_ent + cat_cross_ent_trans + ctc_orig + ctc_trans
-    #return ctc_orig + ctc_trans
+    return cat_cross_ent + cat_cross_ent_trans# + ctc_orig + ctc_trans
 
 label_seq = Input(shape=(max_len,vocab_size+1), name='label_seq') # input directly 
 label_logits = Input(shape=(max_len,), name='label_logits') # input directly
