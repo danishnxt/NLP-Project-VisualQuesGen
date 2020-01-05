@@ -68,9 +68,17 @@ Work conducted:
         
     5. Testing
         -> Model trained on a 1080Ti for 25 epochs -> details and results in notebook
+        -> Other details available in all reports
 
     5. Other work conducted
-        
+        -> We noticed that questions are not exactly open-ended sentences and that there must be a significant pattern to exploit (a form of questions to expect), a question starting with the word "Watermelon" is unlikely and so the model need not account for this as well. 
+
+        A word map in the report -> {} contains a word map that shows a visualization for our questions vocabulary corpus indicating that at the first position, questions were mostly only composed to a few different words. 
+
+        We tried to find a way to exploit this property by also providing a 1 dim "prevailance" vector to our model is auxiliary information, with the expection that this might speed up model testing and guide the optimization algo to a better minima sooner.
+
+        We were, due to lack of availability of compute resource, not able to test this extensively but, after one or two tests, our models reached a lower loss value faster or at the same rate as they did without this "prior" vector information being passed
 
 
     6. Possible future work -> 
+        -> A heavy emphasis on this 'prior' dataset information holds potential to be able to speed up models being trained on a certain type of general data. "Questions" for instance as a subset or a certain 'type' of sentence. 
