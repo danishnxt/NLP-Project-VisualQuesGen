@@ -4,7 +4,7 @@ __Visual Question Generation task adapted from Microsoft -> https://arxiv.org/ab
 
 Work began -> Summer 2018 (at the time code / exact technical specs for task unavailable)
 
-* Danish Farid (currntly @ U Waterloo) - LUMS (SBASSE)
+* Danish Farid (currently @ U Waterloo) - LUMS (SBASSE)
 * Rabeez Riaz (currently @ McKinsey & Co.) - LUMS (SBASSE)
 
 Work conducted: 
