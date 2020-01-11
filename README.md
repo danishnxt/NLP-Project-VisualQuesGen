@@ -6,6 +6,7 @@ Work began -> Summer 2018 (at the time code / exact technical specs for task una
 
 Work conducted by: 
     1. Danish Farid (currntly @ U Waterloo) - LUMS (SBASSE)
+    
     2. Rabeez Riaz (currently @ McKinsey & Co.) - LUMS (SBASSE)
 
 Work conducted: 
