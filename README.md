@@ -76,7 +76,7 @@ Work conducted:
 
         We tried to find a way to exploit this property by also providing a 1 dim "prevailance" vector to our model is auxiliary information, with the expection that this might speed up model testing and guide the optimization algo to a better minima sooner.
 
-        We were, due to lack of availability of compute resource, not able to test this extensively but, after one or two tests, our models reached a lower loss value faster or at the same rate as they did without this "prior" vector information being passed
+        We were, due to lack of availability of compute resource, not able to test this extensively but, after a few tests, our models reached a lower loss value faster (approx 15% sooner) or at the same rate as they did without this "prior" vector information being passed, depending on how the prior infomration was provided
 
 
     6. Possible future work -> 
